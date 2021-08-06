@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>茂茂 | maomao1996</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="description" content="茂茂的个人主页" />
+    <meta name="keywords" content="茂茂,maomao1996" />
+    <meta name="author" content="茂茂,maomao1996" />
+    <meta name="copyright" content="茂茂,maomao1996" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <style>
+      html,
+      body {
+        overflow: hidden;
+        margin: 0;
+      }
+      body {
+        font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial,
+          sans-serif;
+        color: #333;
+      }
+      #wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -160px);
+        transform: translate(-50%, -160px);
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      h1 {
+        left: 4px;
+        margin: 12px 0;
+        font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        letter-spacing: 9px;
+        text-transform: uppercase;
+      }
+      h2 {
+        color: #999;
+        font-weight: normal;
+        font-size: 15px;
+        letter-spacing: 0.12em;
+        margin-bottom: 30px;
+        left: 3px;
+      }
+      h1,
+      h2 {
+        position: relative;
+      }
+      p {
+        font-size: 14px;
+        line-height: 2em;
+        margin: 0;
+        letter-spacing: 2px;
+      }
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      a {
+        color: #999;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      a:hover {
+        color: #f33;
+      }
+      .copyright {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        white-space: nowrap;
+      }
+      .copyright a {
+        color: #337ab7;
+      }
+      .copyright a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 520px) {
+        .copyright {
+          font-size: 12px;
+        }
+      }
+    </style>
+    <script>
+      var _hmt = _hmt || []
+      ;(function () {
+        var hm = document.createElement('script')
+        hm.src = 'https://hm.baidu.com/hm.js?e64dd5366e4efbbb95055cb3d26240a2'
+        var s = document.getElementsByTagName('script')[0]
+        s.parentNode.insertBefore(hm, s)
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>maomao1996</h1>
+      <h2>啥也不会的前端混子</h2>
+      <h3>
+        <a href="https://github.com/maomao1996" target="_blank">Github</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://netease-music.fe-mm.com" target="_blank">mmPlayer</a
+        >&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://notes.fe-mm.com" target="_blank">前端物语</a>
+      </h3>
+    </div>
+    <div class="copyright">
+      Copyright ©
+      <a href="https://fe-mm.com">茂茂</a>
+    </div>
+
+    <canvas></canvas>
+
+    <script>
+      document.addEventListener('touchmove', function (e) {
+        e.preventDefault()
+      })
+      var c = document.getElementsByTagName('canvas')[0],
+        x = c.getContext('2d'),
+        pr = window.devicePixelRatio || 1,
+        w = window.innerWidth,
+        h = window.innerHeight,
+        f = 90,
+        q,
+        m = Math,
+        r = 0,
+        u = m.PI * 2,
+        v = m.cos,
+        z = m.random
+      c.width = w * pr
+      c.height = h * pr
+      x.scale(pr, pr)
+      x.globalAlpha = 0.6
+      function i() {
+        x.clearRect(0, 0, w, h)
+        q = [
+          { x: 0, y: h * 0.7 + f },
+          { x: 0, y: h * 0.7 - f }
+        ]
+        while (q[1].x < w + f) d(q[0], q[1])
+      }
+      function d(i, j) {
+        x.beginPath()
+        x.moveTo(i.x, i.y)
+        x.lineTo(j.x, j.y)
+        var k = j.x + (z() * 2 - 0.25) * f,
+          n = y(j.y)
+        x.lineTo(k, n)
+        x.closePath()
+        r -= u / -50
+        x.fillStyle =
+          '#' +
+          (
+            ((v(r) * 127 + 128) << 16) |
+            ((v(r + u / 3) * 127 + 128) << 8) |
+            (v(r + (u / 3) * 2) * 127 + 128)
+          ).toString(16)
+        x.fill()
+        q[0] = q[1]
+        q[1] = { x: k, y: n }
+      }
+      function y(p) {
+        var t = p + (z() * 2 - 1.1) * f
+        return t > h || t < 0 ? y(p) : t
+      }
+      document.onclick = i
+      document.ontouchstart = i
+      i()
+    </script>
+  </body>
+</html>
