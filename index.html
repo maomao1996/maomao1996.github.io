@@ -19,21 +19,23 @@
         font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial,
           sans-serif;
         color: #333;
+        -webkit-user-select: none;
+        user-select: none;
       }
       #wrapper {
         position: absolute;
-        top: 46%;
+        top: 38.2%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         text-align: center;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+      }
+      .logo:hover {
+        transform: rotate(666turn);
+        transition: transform 59s 1s cubic-bezier(0.3, 0, 0.8, 1);
       }
       h1 {
-        left: 4px;
-        margin: 12px 0;
+        margin: 1rem 0;
         font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
         font-weight: 700;
         font-size: 30px;
@@ -41,31 +43,15 @@
         text-transform: uppercase;
       }
       h2 {
+        margin: 1rem 0;
         color: #999;
         font-weight: normal;
         font-size: 15px;
         letter-spacing: 0.12em;
-        margin-bottom: 30px;
-        left: 3px;
       }
-      h1,
-      h2 {
-        position: relative;
-      }
-      p {
-        font-size: 14px;
-        line-height: 2em;
-        margin: 0;
-        letter-spacing: 2px;
-      }
-      canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
+      h3 {
+        margin: 1rem 0;
+        color: #ccc;
       }
       a {
         color: #999;
@@ -89,6 +75,15 @@
       .copyright a:hover {
         text-decoration: underline;
       }
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
       @media (max-width: 520px) {
         .copyright {
           font-size: 12px;
@@ -108,6 +103,7 @@
   <body>
     <div id="wrapper">
       <img
+        class="logo"
         src="https://cdn.jsdelivr.net/gh/maomao1996/picture/public/logo.png"
         alt="logo"
         width="150"
