@@ -19,14 +19,13 @@
         font-family: 'Open Sans', 'Helvetica Neue', 'Hiragino Sans GB', 'LiHei Pro', Arial,
           sans-serif;
         color: #333;
-        -webkit-user-select: none;
         user-select: none;
       }
       #wrapper {
         position: absolute;
         top: 38.2%;
         left: 50%;
-        -webkit-transform: translate(-50%, -50%);
+        z-index: 1;
         transform: translate(-50%, -50%);
         text-align: center;
       }
@@ -44,22 +43,18 @@
       }
       h2 {
         margin: 1rem 0;
-        color: #999;
+        color: #666;
         font-weight: normal;
-        font-size: 15px;
+        font-size: 16px;
         letter-spacing: 0.12em;
-      }
-      h3 {
-        margin: 1rem 0;
-        color: #ccc;
       }
       a {
         color: #999;
         text-decoration: none;
-        transition: color 0.2s ease;
+        transition: all 0.2s ease;
       }
       a:hover {
-        color: #f33;
+        opacity: 0.8;
       }
       .copyright {
         position: absolute;
@@ -109,16 +104,42 @@
         width="150"
       />
       <h1>maomao1996</h1>
-      <h2>啥也不会的前端混子</h2>
+      <h2>一个想躺平的小开发</h2>
       <p>
-        <img src="https://visitor-badge.glitch.me/badge?page_id=fe-mm.com" alt="游客访问数" />
+        <a href="https://github.com/maomao1996" target="_blank">
+          <img
+            src="https://img.shields.io/badge/GitHub-181717?logo=Github&logoColor=fff"
+            alt="Github"
+          />
+        </a>
+        <a href="https://notes.fe-mm.com" target="_blank">
+          <img
+            src="https://img.shields.io/badge/茂茂物语-4ABF8A?logo=Bloglovin&logoColor=fff"
+            alt="茂茂物语"
+          />
+        </a>
+        <a href="https://github.com/maomao1996/daily-notes" target="_blank">
+          <img
+            src="https://img.shields.io/badge/日常笔记-0D0D0D?logo=Dailymotion&logoColor=fff"
+            alt="日常笔记"
+          />
+        </a>
+        <a href="https://netease-music.fe-mm.com" target="_blank">
+          <img
+            src="https://img.shields.io/badge/mmPlayer-6666CC?logo=AppleMusic&logoColor=fff"
+            alt="mmPlayer"
+          />
+        </a>
+        <a href="https://github.com/maomao1996/tampermonkey-scripts" target="_blank">
+          <img
+            src="https://img.shields.io/badge/油猴脚本库-00485B?logo=Tampermonkey&logoColor=fff"
+            alt="油猴脚本库"
+          />
+        </a>
+        <a href="javascript:void(0)">
+          <img src="https://visitor-badge.laobi.icu/badge?page_id=fe-mm.com" alt="游客访问数" />
+        </a>
       </p>
-      <h3>
-        <a href="https://github.com/maomao1996" target="_blank">Github</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="https://netease-music.fe-mm.com" target="_blank">mmPlayer</a
-        >&nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="https://notes.fe-mm.com" target="_blank">茂茂物语</a>
-      </h3>
     </div>
     <div class="copyright">
       Copyright ©
